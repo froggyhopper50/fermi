@@ -1,13 +1,31 @@
+//This program integrates any continuous function, producing a result
+//typically within a hundredth of the actual value using a Toy Monte Carlo.
+//Please declare the function you wish to integrate in terms of z in the
+//double f() macro below. The function you wish to integrate should be
+//entered according to the following format:
+//
+//double f(double z)
+//{
+//	double output;
+//	output = [insert function here];
+//	return output;
+//}
+//
+//The program will ask the user for bounds as it is running.
+//CODED BY JAMES KENNEDY
+
+//Declare Function in Terms of z
+
 double f(double z)
 {
-	//Declare Function in Terms of z
-
 	double output;
 	output = sin(exp(z));
 	return output;
 }
 
-double macro7(double xLBound, double xUBound)
+//Calculate Integral of Function Above the x Axis
+
+double integrateAbove(double xLBound, double xUBound)
 {
 	//Create New Graph
 
@@ -62,7 +80,9 @@ double macro7(double xLBound, double xUBound)
 	return posIntegral;
 }
 
-double macro6(double xLBound, double xUBound)
+//Calculate Integral Below the x Axis
+
+double integrateBelow(double xLBound, double xUBound)
 {
 	//Create New Graph
 
@@ -117,6 +137,8 @@ double macro6(double xLBound, double xUBound)
 	return negIntegral;
 }
 
+//Determine Function Maximum
+
 double fMax(double xLBound, double xUBound)
 {
 	double fMax = 0.;
@@ -137,6 +159,8 @@ double fMax(double xLBound, double xUBound)
 
 	return fMax;
 }
+
+//Determine Function Minimum
 
 double fMin(double xLBound, double xUBound)
 {
@@ -159,7 +183,7 @@ double fMin(double xLBound, double xUBound)
 	return fMin;
 }
 
-void macro5()
+void integrate()
 {
 	//Declare Variables
 	
@@ -183,8 +207,8 @@ void macro5()
 	//Calculate Positive and Negative Integrals Separately
 	//And Graph Positive and Negative Components on Same Canvas
 
-	posInt = macro7(xLB, xUB);
-	negInt = macro6(xLB, xUB);
+	posInt = integrateAbove(xLB, xUB);
+	negInt = integrateBelow(xLB, xUB);
 
 	//Calculate Total Integral
 
