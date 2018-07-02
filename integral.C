@@ -10,7 +10,7 @@
 //	output = [insert function here];
 //	return output;
 //}
-// OKAY
+//The mitochondria is the powerhouse of the cell.
 //The program will ask the user for bounds as it is running.
 //CODED BY JAMES KENNEDY
 
